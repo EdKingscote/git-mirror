@@ -89,6 +89,7 @@ jobs:
         file: ./artifacts/${{ env.RELEASE_BIN }}-${{ steps.vars.outputs.tag }}-${{ matrix.release_suffix }}
         asset_name: ${{ env.RELEASE_BIN }}-${{ steps.vars.outputs.tag }}-${{ matrix.release_suffix }}
         tag: ${{ github.ref }}
+
   docker:
     runs-on: ubuntu-latest
     steps:
@@ -108,4 +109,3 @@ jobs:
         with:
           push: true
           tags: edkingscote/git-mirror:latest
-      -
