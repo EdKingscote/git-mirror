@@ -99,7 +99,7 @@ jobs:
       - name: Prepare
         id: prep
         run: |
-          DOCKER_IMAGE=${GITHUB_REPOSITORY}
+          DOCKER_IMAGE=${{ secrets.DOCKERHUB_USERNAME }}/git-mirror
           VERSION=edge
           if [[ $GITHUB_REF == refs/tags/* ]]; then
             VERSION=${GITHUB_REF#refs/tags/v}
